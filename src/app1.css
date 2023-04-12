@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  color: #333;
+}
+
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+button[type="submit"] {
+  display: block;
+  background-color: #ff5a5f;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff3035;
+}
+
+.review-paper {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-paper input[type="number"] {
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: 6rem;
+}
+
+.review-paper button[type="submit"] {
+  display: inline-block;
+  background-color: #ff5a5f;
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.review-paper button[type="submit"]:hover {
+  background-color: #ff3035;
+}
+
+.paper-details {
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-top: 1.5rem;
+}
+
+.paper-details p {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.peer-review-block {
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.peer-review-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.peer-review-block label {
+  font-weight: bold;
+}
+
+.peer-review-block textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.peer-review-block button[type="submit"] {
+  display: block;
+  background-color: #ff5a5f;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.peer-review-block button[type="submit"]:hover {
+  background-color: #ff3035;
+}
+/* New styles added below */
+
+/* Color palette */
+:root {
+  --primary-color: #3772ff;
+  --secondary-color: #15cba5;
+  --background-color: #f9f9f9;
+  --text-color: #444444;
+  --light-gray: #dadada;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.page {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+h2 {
+  color: var(--secondary-color);
+}
+
+label {
+  color: var(--text-color);
+}
+
+input[type="text"],
+textarea {
+  background-color: var(--light-gray);
+  border: 1px solid var(--light-gray);
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+.peer-review-block {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.peer-review-block textarea {
+  background-color: var(--light-gray);
+  border: 1px solid var(--light-gray);
+}
+
+.peer-review-block button[type="submit"] {
+  background-color: var(--primary-color);
+}
+
+.peer-review-block button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Font family */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .peer-review-block {
+    padding: 1rem;
+  }
+
+  .peer-review-block h3 {
+    font-size: 1.25rem;
+  }
+
+  .peer-review-block textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .peer-review-block button[type="submit"] {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+  }
+}

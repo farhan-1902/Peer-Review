@@ -1,0 +1,82 @@
+import React, { useState } from 'react';
+import Web3 from 'web3';
+import PeerReviewContract from './contracts/PeerReview.json';
+
+const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
+const peerReviewContract = new web3.eth.Contract(
+  PeerReviewContract.abi,
+  'CONTRACT_ADDRESS'
+);
+
+const App = () => {
+  const [paperTitle, setPaperTitle] = useState('');
+  const [paperAuthor, setPaperAuthor] = useState('');
+  const [paperContent, setPaperContent] = useState('');
+
+  const handleSubmission = async () => {
+    const accounts = await web3.eth.getAccounts();
+    await peerReviewContract.methods
+      .submitPaper(paperTitle, paperAuthor, paperContent)
+      .send({ from: accounts[0], value: web3.utils.toWei('0.01', 'ether') });
+  };
+
+  const handleReview = async (paperId, status) => {
+    const accounts = await web3.eth.getAccounts();
+    await peerReviewContract.methods
+      .reviewPaper(paperId, status)
+      .send({ from: accounts[0] });
+  };
+
+  return (
+    <div>
+      <h1>Peer Review</h1>
+      <h2>Submit a Paper</h2>
+      <form onSubmit={handleSubmission}>
+        <label>
+          Title:
+          <input
+            type="text"
+            value={paperTitle}
+            onChange={(e) => setPaperTitle(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Author:
+          <input
+            type="text"
+            value={paperAuthor}
+            onChange={(e) => setPaperAuthor(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Content:
+          <textarea
+            value={paperContent}
+            onChange={(e) => setPaperContent(e.target.value)}
+          />
+        </label>
+        <br />
+        <button type="submit">Submit Paper</button>
+      </form>
+      <h2>Review a Paper</h2>
+      <ul>
+        <li>
+          <button onClick={() => handleReview(1, 2)}>Accept Paper 1</button>
+          <button onClick={() => handleReview(1, 3)}>Reject Paper 1</button>
+        </li>
+        <li>
+          <button onClick={() => handleReview(2, 2)}>Accept Paper 2</button>
+          <button onClick={() => handleReview(2, 3)}>Reject Paper 2</button>
+        </li>
+        <li>
+          <button onClick={() => handleReview(3, 2)}>Accept Paper 3</button>
+          <button onClick={() => handleReview(3, 3)}>Reject Paper 3</button>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default App;
